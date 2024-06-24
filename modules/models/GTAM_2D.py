@@ -213,7 +213,6 @@ class GTAM_2D(nn.Module):
         x = self.atom_encoder(x)
 
         h_list = [x]
-        # TODO： num_layer 过拟合
         for layer in range(self.num_layer):
             h = self.gnns[layer](h_list[layer], edge_index, edge_attr)
             h = self.batch_norms[layer](h)

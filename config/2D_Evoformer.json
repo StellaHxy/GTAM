@@ -1,0 +1,108 @@
+
+{
+    "seq_channel" : 256,
+    "pair_channel" : 64,
+    "index_embed_size": 32,
+    "seqformer_num_block" :1,
+    "gtaformer" :{ 
+    "seq_attention_with_pair_bias" : {
+        "orientation" : "per_row",
+        "num_head" : 8,
+        "inp_kernels":[],
+        "dropout_rate" : 0.3,
+        "shared_dropout" : true,
+        "LoRA":{
+            "enabled":false,
+            "rank":4,
+            "dropout_rate":0.15
+        }
+    },
+    "seq_transition" : {
+        "orientation" : "per_row",
+        "num_intermediate_factor" : 4,
+        "dropout_rate" : 0.3,
+        "shared_dropout" : true,
+        "LoRA":{
+            "enabled":false,
+            "rank":4,
+            "dropout_rate":0.15
+        }
+    },
+    "outer_product_mean" : {
+        "orientation" : "per_row",
+        "num_outer_channel" : 64,
+        "dropout_rate" : 0,
+        "shared_dropout" : true,
+        "LoRA":{
+            "enabled":false,
+            "rank":4,
+            "dropout_rate":0.1
+        }
+    },
+    "triangle_multiplication_outgoing" : {
+        "orientation" : "per_row",
+        "num_intermediate_channel" : 64,
+        "gating":true,
+        "num_head":4,
+        "inp_kernels":[],
+        "dropout_rate" : 0.3,
+        "shared_dropout" : false,
+        "LoRA":{
+            "enabled":false,
+            "rank":4,
+            "dropout_rate":0.15
+        }
+    },
+    "triangle_multiplication_incoming" : {
+        "orientation" : "per_column",
+        "num_intermediate_channel" : 64,
+        "gating":true,
+        "num_head":4,
+        "inp_kernels":[],
+        "dropout_rate" : 0.3,
+        "shared_dropout" : false,
+        "LoRA":{
+            "enabled":false,
+            "rank":4,
+            "dropout_rate":0.3
+        }
+    },
+    "triangle_attention_starting_node" : {
+        "orientation" : "per_row",
+        "num_head" : 4,
+        "gating":true,
+        "inp_kernels":[],
+        "dropout_rate" : 0.3,
+        "shared_dropout" : false,
+        "LoRA":{
+            "enabled":false,
+            "rank":4,
+            "dropout_rate":0.3
+        }
+    },
+    "triangle_attention_ending_node" : {
+        "orientation" : "per_column",
+        "num_head" : 4,
+        "gating":true,
+        "inp_kernels":[],
+        "dropout_rate" : 0.3,
+        "shared_dropout" : false,
+        "LoRA":{
+            "enabled":false,
+            "rank":4,
+            "dropout_rate":0.3
+        }
+    },
+    "pair_transition" : {
+        "orientation" : "per_row",
+        "num_intermediate_factor" : 4,
+        "dropout_rate" : 0.3,
+        "shared_dropout" : true,
+        "LoRA":{
+            "enabled":false,
+            "rank":4,
+            "dropout_rate":0.3
+        }
+    }
+    }
+}
