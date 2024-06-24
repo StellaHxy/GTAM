@@ -7,7 +7,7 @@ from torch_geometric.nn import (MessagePassing,
 from torch_geometric.nn.inits import glorot, zeros
 from torch_geometric.utils import degree, softmax, to_dense_batch, to_dense_adj
 from ogb.graphproppred.mol_encoder import AtomEncoder, BondEncoder
-from .seqformer import Seqformer
+from .GTA import Seqformer
 from ogb.utils.features import get_bond_feature_dims 
 
 class MLP(torch.nn.Module):
