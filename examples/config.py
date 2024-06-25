@@ -11,8 +11,6 @@ parser.add_argument("--device", type=int, default=2)
 parser.add_argument("--dataset", type=str, default="PCQM4Mv2")
 parser.add_argument("--task", type=str, default="alpha")
 parser.add_argument("--num_workers", type=int, default=32)
-parser.add_argument("--evoformer_config", type=str, default="../config/2D_Evoformer.json")
-parser.add_argument("--IPA_config", type=str, default="../config/IPA_config.json")
 
 parser.add_argument("--num_bins", type=int, default=32)
 parser.add_argument("--first_break", type=float, default=1.0)
@@ -145,7 +143,7 @@ parser.set_defaults(eval_test=True)
 parser.add_argument("--input_data_dir", type=str, default="../data")
 parser.add_argument("--is_linear", type=bool, default="False")
 # about loading and saving
-parser.add_argument("--input_model_file", type=str, default="/home/zhutian/Git_repo/GTAM/output/pretrain_checkpoint/2d_3d_evo_loss/model_complete_final.pth")
+parser.add_argument("--input_model_file", type=str, default="../output/pretrain_checkpoint/model_complete_final.pth")
 parser.add_argument("--output_model_dir", type=str)
 
 parser.add_argument("--threshold", type=float, default=0)

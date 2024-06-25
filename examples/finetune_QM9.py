@@ -42,7 +42,7 @@ def split(dataset, data_root):
 
 
 def model_setup():
-    with open(args.evoformer_config, 'r', encoding='utf-8') as f_evo:
+    with open("../config/GTAformer.json", 'r', encoding='utf-8') as f_evo:
         evo_config = json.loads(f_evo.read())
         evo_config = ml_collections.ConfigDict(evo_config)
     model = GTAM_3D(

@@ -186,7 +186,7 @@ if __name__ == '__main__':
     loader = DataLoader(dataset, batch_size=args.batch_size, shuffle=True, num_workers=args.num_workers, pin_memory=True, prefetch_factor=128)
 
     # set up model
-    with open(args.evoformer_config, 'r', encoding='utf-8') as f_evo:
+    with open("../config/GTAformer.json", 'r', encoding='utf-8') as f_evo:
        evo_config = json.loads(f_evo.read())
        evo_config = ml_collections.ConfigDict(evo_config)
 

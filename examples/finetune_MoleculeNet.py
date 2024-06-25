@@ -70,12 +70,9 @@ def split(dataset, smiles_list, data_root):
 def model_setup():
     molecule_readout_func = None
 
-    if args.evoformer_config != 'None':
-        with open(args.evoformer_config, 'r', encoding='utf-8') as f:
-            evo_config = json.loads(f.read())
-            evo_config = ml_collections.ConfigDict(evo_config)
-    else:
-        evo_config = None
+    with open("../config/GTAformer.json", 'r', encoding='utf-8') as f:
+        evo_config = json.loads(f.read())
+        evo_config = ml_collections.ConfigDict(evo_config)
 
     model = GTAM_2D(args.num_layer, args.emb_dim, evo_config, JK=args.JK, drop_ratio=args.dropout_ratio, gnn_type='GIN', linear=args.is_linear)
     molecule_readout_func = global_mean_pool
